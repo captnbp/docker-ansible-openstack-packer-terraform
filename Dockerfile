@@ -16,7 +16,7 @@ RUN echo "===> Installing sudo to emulate normal OS behavior..."  && \
     echo "===> Installing Ansible..." && \
     pip3 install ansible              && \
     echo "===> Installing Openstack clients..." && \
-    pip3 install python-novaclient python-openstackclient python-cinderclient python-glanceclient python-neutronclient shade && \
+    pip3 install python-novaclient python-openstackclient python-cinderclient python-glanceclient python-neutronclient shade datadog && \
     echo "===> Removing package list..." && \
     apk del build-dependencies           && \
     rm -rf /var/cache/apk/*              && \
