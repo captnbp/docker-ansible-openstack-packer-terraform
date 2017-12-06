@@ -2,6 +2,7 @@ FROM alpine:latest
 
 ENV TERRAFORM_VERSION 0.11.1
 ENV PACKER_VERSION 1.1.2
+ENV FAAS_CLI_VERSION 0.5.0
 
 RUN apk add -U python3 py3-pip openssl ca-certificates python3-dev libffi-dev openssl-dev build-base linux-headers terraform
 
@@ -32,3 +33,6 @@ RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform
 	unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
 	rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
 	mv terraform /usr/local/bin/terraform
+
+ADD https://github.com/openfaas/faas-cli/releases/download/${FAAS_CLI_VERSION}/faas-cli /usr/local/bin/faas-cli
+RUN chmod +x /usr/local/bin/faas-cli
