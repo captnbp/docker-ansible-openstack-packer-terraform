@@ -4,7 +4,7 @@ ENV TERRAFORM_VERSION 0.11.1
 ENV PACKER_VERSION 1.1.2
 ENV FAAS_CLI_VERSION 0.5.0
 
-RUN apk add -U python3 py3-pip openssl ca-certificates python3-dev libffi-dev openssl-dev build-base linux-headers terraform docker
+RUN apk add -U python3 py3-pip openssl ca-certificates python3-dev libffi-dev openssl-dev build-base linux-headers terraform docker curl
 
 RUN echo "===> Installing sudo to emulate normal OS behavior..."  && \
     apk --update add sudo                                         && \
